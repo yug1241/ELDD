@@ -1,1 +1,0 @@
-cmd_/home/sunbeam/Desktop/my_practise/eldd/day9_ELDD_Q1/modules.order := {   echo /home/sunbeam/Desktop/my_practise/eldd/day9_ELDD_Q1/pchar.ko; :; } > /home/sunbeam/Desktop/my_practise/eldd/day9_ELDD_Q1/modules.order
