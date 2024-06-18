@@ -1,0 +1,1 @@
+cmd_/home/sunbeam/Desktop/my_practise/eldd/day9_ELDD_Q1/Module.symvers :=  sed 's/ko$$/o/'  /home/sunbeam/Desktop/my_practise/eldd/day9_ELDD_Q1/modules.order | scripts/mod/modpost -m -a    -o /home/sunbeam/Desktop/my_practise/eldd/day9_ELDD_Q1/Module.symvers -e -i Module.symvers -T - 
