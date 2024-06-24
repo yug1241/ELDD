@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	fd = open("/dev/BBB_gpio0", O_RDWR);
+	fd = open("/dev/yug_gpio0", O_RDWR);
 
 	if(strcmp(argv[1], "on") == 0) {
 		write(fd, "1", 1);

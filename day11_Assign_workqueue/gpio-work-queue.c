@@ -7,7 +7,7 @@
 #include <linux/gpio.h>
 #include <linux/uaccess.h>
 #include <linux/interrupt.h>
-#include<linux/delay.h>
+#include<linux/delay.h> //for msleep
 
 #define LED_GPIO 	49
 #define SWITCH_GPIO 	115

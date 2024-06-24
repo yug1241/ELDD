@@ -1,3 +1,23 @@
+/*   1. Implement a sysfs based driver for BBB GPIO.
+global variable -- int state;
+implement sysfs operations -- show and store
+state_store()
+state = given_value;
+if state is 0, gpio_set_value(pin, 0) and if state is not 0, gpio_set_value(pin, 1) -- LED ON/OFF.
+state_show()
+display LED state -- 1/0
+create attribute and attribute group.
+global variable -- struct kobject led_kobj;
+module init --
+ set up gpio -- gpio_is_valid(), gpio_request(), gpio_output_direction().
+kobject_create_and_add()
+sysfs_create_group()
+module exit --
+gpio_free()
+kobject_put()
+module macros */
+
+
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
@@ -89,6 +109,6 @@ module_init(led_init);
 module_exit(led_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Yugandhar Narkhede");
+MODULE_AUTHOR("Yugandhar Narkhede <yashnarkhede04@gmail.com>");
 MODULE_DESCRIPTION("A simple sysfs-based GPIO driver for BBB");
 

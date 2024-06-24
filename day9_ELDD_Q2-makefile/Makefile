@@ -1,4 +1,4 @@
-
+// Q.2 Create a Makeﬁle to cross-compile drivers for BBB. Try all pchar drivers on BBB.
 obj-m = pchar.o
 
 modules:
@@ -12,5 +12,5 @@ clean:
 	
 	
 
-.PHONY: all clean
+.PHONY: modules clean
 

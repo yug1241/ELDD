@@ -1,3 +1,11 @@
+/* 3. Implement pseudo char device driver with wait queue as discussed in class. Implement additional functionality -- If buﬀer is empty, block the reader
+process until some data is written into the buﬀer.
+step 1: create another waiting queue -- rd_wq.
+step 2: initialize waiting queue in module_init()
+step 3: In pchar_read(), wait_event_interruptible() -- kﬁfo_is_empty()
+step 4: In pchar_write(), after write wakeup the reader process.*/
+
+
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/device.h>

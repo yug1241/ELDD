@@ -163,7 +163,7 @@ static int pchar_open(struct inode *pinode, struct file *pfile) {
     pfile->private_data = pdev;
     printk(KERN_INFO "%s: locking device pchar%d in process %d (%s).\n", THIS_MODULE->name, MINOR(pdev->devno), get_current()->pid, get_current()->comm);
     //mutex_lock(&pdev->lock);
-   up(&pdev->sem);
+   down(&pdev->sem);
     printk(KERN_INFO "%s: device pchar%d semaphorelock is acquired by process %d (%s).\n", THIS_MODULE->name, MINOR(pdev->devno), get_current()->pid, get_current()->comm);
     return 0;
 }
@@ -174,7 +174,7 @@ static int pchar_close(struct inode *pinode, struct file *pfile) {
     printk(KERN_INFO "%s: pchar_close() called.\n", THIS_MODULE->name);
     pdev = (struct pchar_device *)pfile->private_data;
     //mutex_unlock(&pdev->lock);
-    down(&pdev->sem);
+    up(&pdev->sem);
     printk(KERN_INFO "%s: device pchar%d unlock is acquired by process %d (%s).\n", THIS_MODULE->name, MINOR(pdev->devno), get_current()->pid, get_current()->comm);
     return 0;
 }

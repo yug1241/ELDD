@@ -1,3 +1,5 @@
+/* Q.1. Implement pseudo char device driver that supports multiple device instances. The number of devices given by user while loading module (i.e. module
+param). */
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/device.h>

@@ -1,3 +1,4 @@
+//Q.2. Implement resize ﬁfo operation using ioctl() as discussed in class.
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/device.h>
